@@ -17,10 +17,10 @@ windows:
       root: ~/
       panes:
         - clear; source ~/.bashrc; cd /home/mr_robot/Desktop/Git/rom_flight_control; ./QGroundControl-x86_64.AppImage
-  - uXRCE-DDS_Hw: 
+  - uXRCE-DDS_Sim: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; MicroXRCEAgent serial --dev /dev/ttyUSB0 -b 921600
+        - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888
   - sensorCombined: 
       root: ~/
       panes:
@@ -28,4 +28,4 @@ windows:
   - TrainingNode: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; source ~/yolo_env/env/bin/activate; ros2 run drl_px4 train_maze
+        - clear; source ~/.bashrc; ros2 run drl_px4 train_maze

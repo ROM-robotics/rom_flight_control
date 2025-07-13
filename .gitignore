@@ -1,3 +1,6 @@
 QGroundControl-x86_64.AppImage
 ./QGroundControl-x86_64.AppImage
 
+.vscode
+.vscode/*
+./.vscode
