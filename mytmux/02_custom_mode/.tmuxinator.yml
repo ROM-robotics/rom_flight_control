@@ -32,4 +32,4 @@ windows:
   - Visualizer: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 2; ros2 launch px4_offboard visualizer.launch.py
+        - clear; source ~/.bashrc; sleep 2; ros2 launch px4_offboard offboard_visualizer.launch.py
