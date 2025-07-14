@@ -16,7 +16,7 @@ windows:
   - GCS: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; #cd /home/mr_robot/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
+        - clear; source ~/.bashrc; cd /home/mr_robot/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
   - uXRCE-DDS_Sim: 
       root: ~/
       panes:
