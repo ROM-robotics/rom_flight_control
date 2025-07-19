@@ -12,7 +12,7 @@ windows:
   - Simulation: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; cd /home/mr_robot/Desktop/Git/Drone/PX4-Autopilot; make px4_sitl gz_x500
+        - clear; source ~/.bashrc; cd /home/mr_robot/PX4-Autopilot; make px4_sitl gz_x500 # git checkout rom_v1.
   - GCS: 
       root: ~/
       panes:
@@ -21,15 +21,11 @@ windows:
       root: ~/
       panes:
         - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888
-  - sensorCombined: 
+  - GoToMode: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 1; ros2 launch px4_ros_com sensor_combined_listener.launch.py
-  - PositionControl: 
+        - clear; source ~/.bashrc; source ~/px4_ws/install/setup.bash; #sleep 3; ros2 run rom_px4_1_16 rom_go_to_mode
+  - OriginalGoToMode: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 3; ros2 launch px4_offboard offboard_position_control.launch.py
-  - Visualizer: 
-      root: ~/
-      panes:
-        - clear; source ~/.bashrc; sleep 3; #ros2 launch px4_offboard visualize.launch.py
+        - clear; source ~/.bashrc; source ~/px4_ws/install/setup.bash; sleep 3; ros2 run example_mode_goto_cpp example_mode_goto
