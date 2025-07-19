@@ -21,10 +21,30 @@ windows:
       root: ~/
       panes:
         - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888
-  - CustomMOde: 
+  - CustomMode: 
       root: ~/
       panes:
-        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run custom_mode custom_mode --ros-args -p trajectory_type:=figure_8
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run custom_mode custom_mode --ros-args -p trajectory_type:=figure_8
+  - Example1: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run example_mode_fw_attitude_cpp example_mode_fw_attitude
+  - Example2: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run example_mode_with_executor_cpp example_mode_with_executor
+  - Exampl3: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run example_local_navigation_cpp example_local_navigation
+  - Example4: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run example_mode_rtl_replacement_cpp example_mode_rtl 
+  - ROM_Triangle: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode rom_go_triangle
   - Visualizer: 
       root: ~/
       panes:
