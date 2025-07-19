@@ -1,0 +1,35 @@
+# ./.tmuxinator.yml
+
+name: ROM Dynamics 
+root: ~/
+
+pre_window: export PS1=" \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;45m\]>>>\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
+startup_window: Simulation
+# startup_pane: 0
+
+windows:
+  - Simulation: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; cd /home/mr_robot/PX4-Autopilot; make px4_sitl_default gz_x500
+  - GCS: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; cd /home/mr_robot/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
+  - uXRCE-DDS_Sim: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888
+  - ROM_Mode_Executor: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode rom_dynamics_mode_executor
+  - ROM_Triangle: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run rom_dynamics_special_mode rom_go_triangle
+  - Visualizer: 
+      root: ~/
+      panes:
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 2; ros2 launch px4_offboard offboard_visualizer.launch.py
