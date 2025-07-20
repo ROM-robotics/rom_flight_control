@@ -24,11 +24,11 @@ windows:
   - ROM_Mode_Executor: 
       root: ~/
       panes:
-        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode rom_dynamics_mode_executor
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run rom_dynamics_special_mode rom_dynamics_mode_executor
   - ROM_Triangle: 
       root: ~/
       panes:
-        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; #sleep 3; ros2 run rom_dynamics_special_mode rom_go_triangle
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode rom_go_triangle_land
   - Visualizer: 
       root: ~/
       panes:
