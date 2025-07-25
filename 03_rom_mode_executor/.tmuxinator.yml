@@ -12,7 +12,7 @@ windows:
   - Simulation: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; cd /home/mr_robot/PX4-Autopilot; make px4_sitl_default gz_x500
+        - clear; source ~/.bashrc; cd /home/mr_robot/PX4-Autopilot; make px4_sitl gz_x500
   - GCS: 
       root: ~/
       panes:
@@ -20,7 +20,7 @@ windows:
   - uXRCE-DDS_Sim: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888
+        - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888 --use-sim-time
   - ROM_Mode_Executor: 
       root: ~/
       panes:
