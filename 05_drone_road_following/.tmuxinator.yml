@@ -16,15 +16,15 @@ windows:
   - gcs: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; cd ~/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
+        - clear; source ~/.bashrc; sleep 2; cd ~/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
   - bridge: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image /camera_info@gz.msgs.CameraInfo --ros-args -r /camera:=/camera/down_left/image -r /camera_info:=/camera/down_left/camera_info
+        - clear; source ~/.bashrc; sleep 3; ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image /camera_info@gz.msgs.CameraInfo --ros-args -r /camera:=/camera/down_left/image -r /camera_info:=/camera/down_left/camera_info
   - dds: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; MicroXRCEAgent udp4 -p 8888 --use-sim-time
+        - clear; source ~/.bashrc; sleep 3; MicroXRCEAgent udp4 -p 8888 --use-sim-time
   - viz: 
       root: ~/
       panes:
@@ -32,7 +32,7 @@ windows:
   - yolo: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 20; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
+        - clear; source ~/.bashrc; #sleep 20; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
   - mission: 
       root: ~/
       panes:
