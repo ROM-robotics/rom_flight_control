@@ -28,12 +28,12 @@ windows:
   - viz: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 3; ros2 run rviz2 rviz2 -d ~/Drone_Road_Following/Scripts/config.rviz
+        - clear; source ~/.bashrc; sleep 13; ros2 run rviz2 rviz2 -d ~/Drone_Road_Following/Scripts/config.rviz
   - yolo: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; #sleep 20; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
+        - clear; source ~/.bashrc; sleep 10; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
   - mission: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; #sleep 35; ros2 run python3 Missioncorect.py
+        - clear; source ~/.bashrc; #sleep 15; ros2 run python3 Missioncorect.py
