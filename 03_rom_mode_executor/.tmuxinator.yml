@@ -28,7 +28,7 @@ windows:
   - ROM_Triangle: 
       root: ~/
       panes:
-        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode go_triangle_land
+        - clear; source ~/px4_ros2_examples_ws/install/setup.bash; sleep 3; ros2 run rom_dynamics_special_mode takeoff_gt_land_executor
   - Visualizer: 
       root: ~/
       panes:

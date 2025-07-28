@@ -36,4 +36,4 @@ windows:
   - mission: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; #sleep 15; ros2 run python3 Missioncorect.py
+        - clear; source ~/.bashrc; sleep 15; ros2 run rom_dynamics_special_mode follow_road
