@@ -32,7 +32,7 @@ windows:
   - yolo: 
       root: ~/
       panes:
-        - clear; source ~/.bashrc; sleep 28; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
+        - clear; source ~/.bashrc; sleep 28; source ~/yolo_env/bin/activate; cd ~/px4_ros2_examples_ws/src/rom_drone_road_following; python3 RML_yolo.py
   - mission: 
       root: ~/
       panes:
