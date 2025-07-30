@@ -1,0 +1,39 @@
+# ./.tmuxinator.yml
+
+name: ROM Dynamics 
+root: ~/
+
+pre_window: export PS1=" \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;45m\]>>>\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
+startup_window: px4
+# startup_pane: 0
+
+windows:
+  - px4: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; cd ~/PX4-Autopilot; make px4_sitl gz_x500_mono_cam_down_baylands
+  - gcs: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 2; cd ~/Desktop/Git/Drone; ./QGroundControl-x86_64.AppImage
+  - bridge: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 25; ros2 run ros_gz_bridge parameter_bridge /camera@sensor_msgs/msg/Image@gz.msgs.Image /camera_info@gz.msgs.CameraInfo --ros-args -r /camera:=/camera/down_left/image -r /camera_info:=/camera/down_left/camera_info
+  - dds: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 25; MicroXRCEAgent udp4 -p 8888 --use-sim-time
+  - viz: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 30; ros2 run rviz2 rviz2 -d ~/Drone_Road_Following/Scripts/config.rviz
+  - yolo: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 28; source ~/yolo_env/bin/activate; cd ~/Drone_Road_Following/Scripts; python3 RML_yolo.py
+  - mission: 
+      root: ~/
+      panes:
+        - clear; source ~/.bashrc; sleep 32; source ~/px4_ros2_examples_ws/install/setup.bash; ros2 run rom_dynamics_special_mode follow_road_executor
