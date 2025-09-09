@@ -14,7 +14,7 @@ bb
 source ~/px4_ros2_examples_ws/install/setup.bash
 ```
 
-### 2 Container
+### 2 Container ( private )
 
 #### 2.1 How to run
 ```
